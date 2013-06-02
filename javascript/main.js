@@ -157,7 +157,7 @@ function handle_nav_clicks(e){
     }
     else {
         var rec_id = target.attr('id');
-        $('article').css('display', 'none');
+        $('article, section').css('display', 'none');
         $('#'+rec_id+'-rec, #'+rec_id+'-rec-0').css('display', 'block');
         var height = $('#'+rec_id+'-rec-0').height() / 2;
         $('.next, .prev').css('top', height +'px');
