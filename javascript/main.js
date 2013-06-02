@@ -192,7 +192,7 @@ function load_recipes(){
 function load_recipe(navEl, title){
     var main = $('#main');
     navEl.find('ul').append('<li id="' + title + '"">' + title + '</li>');
-    main.append('<article id="' + title + '-rec"><h2>'+ title +'</h2><section id="' + title + '-rec-0"><h3>Zutaten</h3><a href="" class="next"><div></div></a><ul></ul></section></article>');
+    main.append('<article id="' + title + '-rec"><h2>'+ title +'</h2><section id="' + title + '-rec-0"><h3>Zutaten</h3><a href="" class="next"><div></div></a><p>Für '+ JSON.parse(localStorage.getItem(title)).persons +' Personen</p><ul></ul></section></article>');
     var article = $('#'+title+'-rec');
     var ing_ul = $('#'+title+'-rec-0 ul');
     var rec_dict = JSON.parse(localStorage.getItem(title));
