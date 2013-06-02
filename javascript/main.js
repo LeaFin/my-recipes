@@ -191,10 +191,10 @@ function load_recipes(){
 
 function load_recipe(navEl, title){
     var main = $('#main');
-    navEl.find('ul').append('<li id="' + title + '">' + title + '</li>');
-    main.append('<article id="' + title + '-rec"><h2>'+ title +'</h2><section id="' + title + '-rec-0"><h3>Zutaten</h3><a href="" class="next"><div></div></a><p>Für '+ JSON.parse(localStorage.getItem(title)).persons +' Personen</p><ul></ul></section></article>');
-    var article = $('#'+title+'-rec');
-    var ing_ul = $('#'+title+'-rec-0 ul');
+    navEl.find('ul').append('<li id="' + title.replace(' ', '') + '">' + title + '</li>');
+    main.append('<article id="' + title.replace(' ', '') + '-rec"><h2>'+ title +'</h2><section id="' + title.replace(' ', '') + '-rec-0"><h3>Zutaten</h3><a href="" class="next"><div></div></a><p>Für '+ JSON.parse(localStorage.getItem(title)).persons +' Personen</p><ul></ul></section></article>');
+    var article = $('#'+title.replace(' ', '')+'-rec');
+    var ing_ul = $('#'+title.replace(' ', '')+'-rec-0 ul');
     var rec_dict = JSON.parse(localStorage.getItem(title));
     $.each(rec_dict, function(k, v){
         if (k.startsWith('ing')){
@@ -205,7 +205,7 @@ function load_recipe(navEl, title){
         }
         if (k.startsWith('desc')){
             var step_num = k.split('-')[1];
-            article.append('<section id="'+ title +'-rec-' + step_num + '"><h3>Schritt '+ step_num +'</h3><a href="" class="prev"><div></div></a><a href="" class="next"><div></div></a><p>' + v + '</p></section>');
+            article.append('<section id="'+ title.replace(' ', '') +'-rec-' + step_num + '"><h3>Schritt '+ step_num +'</h3><a href="" class="prev"><div></div></a><a href="" class="next"><div></div></a><p>' + v + '</p></section>');
         }
     });
 }
