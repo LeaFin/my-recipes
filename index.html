@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>My recipes</title>
+	<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/less" href="stylesheets/main.less">
+	<script type="text/javascript" src="javascript/less-1.3.3.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>My recipes</h1>
+	</header>
+	<div class="content">
+		<nav>
+			<ul class="nav-list" id="nav-list">
+				<li id="cat1" class="topnav">Vorspeisen
+					<ul>
+					</ul>
+				</li>
+				<li id="cat2" class="topnav">Vegetarisch
+					<ul>
+					</ul>
+				</li>
+				<li id="cat3" class="topnav">Fleisch
+					<ul>
+					</ul>
+				</li>
+				<li id="cat4" class="topnav">Fisch
+					<ul>
+					</ul>
+				</li>
+				<li id="cat5" class="topnav">Dessert
+					<ul>
+					</ul>
+				</li>
+				<li id="cat6" class="topnav">Gebäck
+					<ul>
+					</ul>
+				</li>
+				<li id="cat7" class="topnav">Getränk
+					<ul>
+					</ul>
+				</li>
+				<li id="new_rec">Neues Rezept</li>
+			</ul>
+		</nav>
+		<div id="main">
+			<article id="form">
+				<h2>Rezept hinzufügen</h2>
+				<p>Erfasse dein neustes Rezept mit diesem Formular und du wirst es immer wieder Schritt für Schritt anschauen und nachkochen können.</p>
+				<form id="new-recipe">
+					<ul>
+						<li id="existing_error" class="existing_error">Du hast bereits ein Rezept mit diesem Namen.</li>
+						<li>
+							<label>Name deines Gerichts</label>
+							<input type="text" name="title" id="title">
+						</li>
+						<li>
+							<label>Kategorie</label>
+							<ul class="radio" id="cat">
+								<li><input type="radio" name="cat" value="1"> <label>Vorspeise</label></li>
+								<li><input type="radio" name="cat" value="2"> <label>Vegetarisch</label></li>
+								<li><input type="radio" name="cat" value="3"> <label>Fleisch</label></li>
+								<li><input type="radio" name="cat" value="4"> <label>Fisch</label></li>
+								<li><input type="radio" name="cat" value="5"> <label>Dessert</label></li>
+								<li><input type="radio" name="cat" value="6"> <label>Gebäck</label></li>
+								<li><input type="radio" name="cat" value="7"> <label>Getränk</label></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="form-block">
+					<h3>Deine Zutaten</h3>
+						<p>Für <input type="text" name="persons" id="persons" value="4"> Personen</p>
+						<table class="form-set" id="form-set-ing">
+							<tr>
+								<th>Zutat</th>
+								<th>Menge</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="ing-1" id="ing-1">
+								</td>
+								<td>
+									<input type="text" class="amount" name="amount-1" id="amount-1">
+								</td>
+								<td>
+									<select name="unit-1" id="unit-1">
+										<option value="EL">EL</option>
+										<option value="TL">TL</option>
+										<option value="l">l</option>
+										<option value="dl">dl</option>
+										<option value="kg">kg</option>
+										<option value="g">g</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="ing-2" id="ing-2">
+								</td>
+								<td>
+									<input class="amount" type="text" name="amount-2" id="amount-2">
+								</td>
+								<td>
+									<select name="unit-2" id="unit-2">
+										<option value="EL">EL</option>
+										<option value="TL">TL</option>
+										<option value="l">l</option>
+										<option value="dl">dl</option>
+										<option value="kg">kg</option>
+										<option value="g">g</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="ing-3" id="ing-3">
+								</td>
+								<td>
+									<input type="text" class="amount" name="amount-3" id="amount-3">
+								</td>
+								<td>	
+									<select name="unit-3" id="unit-3">
+										<option value="EL">EL</option>
+										<option value="TL">TL</option>
+										<option value="l">l</option>
+										<option value="dl">dl</option>
+										<option value="kg">kg</option>
+										<option value="g">g</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<button class="plus" id="more-ing" name="more-ing">Mein Rezept hat mehr Zutaten</button>
+					</div>
+					<div class="form-block">
+					<h3>Schritt für Schritt zum fertigen Gericht</h3>
+						<table class="form-tb form-set" id="form-set-steps">
+							<tr>
+								<th></th>
+								<th>Beschreibung</th>
+								<!---<th>Bild</th>-->
+							</tr>
+							<tr class="num-row">
+								<td><textarea name="desc-1"></textarea></td>
+								<!---<td><input type="file" name="img-1" id="img-1"></td>-->
+							</tr>
+							<tr class="num-row">
+								<td><textarea name="desc-2"></textarea></td>
+								<!---<td><input type="file" name="img-2" id="img-2"></td>-->
+							</tr>
+							<tr class="num-row">
+								<td><textarea name="desc-3"></textarea></td>
+								<!---<td><input type="file" name="img-3" id="img-3"></td>-->
+							</tr>
+						</table>
+						<button class="plus" id="more-steps" name="more-steps">Schritt hinzufügen</button>
+					</div>
+					<input type="submit" class="button" value="Rezept speichern">
+				</form>
+			</article>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascript/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="javascript/main.js"></script>
+</body>
+</html>

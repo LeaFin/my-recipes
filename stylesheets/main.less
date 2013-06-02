@@ -1,0 +1,239 @@
+@import "lib.less";
+
+body {
+    width: 100%;
+    min-width: 960px;
+    background-color: @white;
+    padding: 0;
+    margin: 0;
+    font-family: 'Alef', sans-serif;
+    color: @brown;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 180px;
+    background: url('../images/gemuese.jpg');
+    background-size: cover;
+    z-index: 2;
+    box-shadow: 8px 0 10px 1px @brown;
+}
+h1, h2, h3{
+    font-family: 'Leckerli One', cursive;
+    font-weight: normal;
+}
+h2, h3 {
+    color: #d8cfb5;
+}
+h1 {
+    display: inline-block;
+    width: 680px;
+    padding-left: 280px;
+    font-size: 68px;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    &.radio {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.content {
+    padding: 180px 40px 40px 280px;
+    width: 640px ;
+}
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 210px;
+    .animate(color-change, 30s, linear);
+    .animation-count(infinite);
+    z-index: 1;
+}
+ul.nav-list {
+    padding-left: 20px;
+    margin-top: 200px;
+    opacity: 0.75;
+    >li {
+        .transition(color, 0.2s);
+        font-family: 'Leckerli One', cursive;
+        &:hover {
+            color:  @white;
+            cursor: pointer;
+        }
+    }
+    .topnav {
+        ul {
+            padding-left: 10px;
+            color:  @white;
+            height: 0;
+            overflow: hidden;
+            .transition(all, 0s);
+            > li:hover {
+                .transition(color, 0.2s);
+                color: @brown;
+                cursor: pointer;
+            }
+        }
+        &.open {
+            ul {
+                .transition(all, 0.3s);
+            }
+        }
+    }
+}
+article{
+    display: none;
+    &:first-child {
+        display: block;
+    }
+}
+label, th {
+    font-weight: bold;
+}
+th {
+    text-align: left;
+}
+label {
+    display: inline-block;
+    width: 230px;
+}
+.form-block, section {
+    margin-top: 40px;
+    border: 3px solid #d8cfb5;
+    border-radius: 10px;
+    padding: 17px 10px 10px 10px;
+    position: relative;
+    &.error {
+        border-color: red;
+    }
+    h3 {
+        background-color: @white;
+        display: inline-block;
+        padding: 3px;
+        position: absolute;
+        top: -40px;
+    }
+}
+.form-block{
+    padding-bottom: 60px;
+}
+.form-tb {
+    counter-reset: step-counter;
+    .num-row:before {
+        content: counter(step-counter)'.';
+        counter-increment: step-counter;
+    }
+}
+.radio{
+    border: 3px solid transparent;
+    margin-top: 10px;
+    label {
+        font-weight: normal;
+    }
+    &.error {
+        border-color: red;
+        border-radius: 10px;
+    }
+}
+input, textarea, select {
+    border-radius: 10px;
+    &[type="text"]{
+        width: 400px;
+    }
+    &#persons {
+        display: inline;
+        width: 30px;
+    }
+    &.error{
+        border-color: red;
+        background-color: #ffefef;
+    }
+    &.amount{
+        width: 70px;
+    }
+}
+textarea{
+    width: 400px;
+}
+button {
+    background-color: #d8cfb5;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    .transition(all, 0.2s);
+    &:hover {
+        background-color: @brown;
+        color: @white;
+    }
+}
+.button {
+    background-color: #d8cfb5;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    .transition(all, 0.2s);
+    &:hover {
+        background-color: @brown;
+        color: @white;
+    }
+}
+.existing_error {
+    color: red;
+    display: none;
+}
+section {
+    display: none;
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    h3 {
+        left: 10px;
+    }
+    &:last-child .next {
+        display: none;
+    }
+}
+.prev, .next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    border-radius: 10px;
+    &:hover {
+        background-color: #d8cfb5;
+        div {
+            border-left-color: @brown;
+            border-top-color: @brown;  
+        }
+    }
+    div {
+        border-left: 3px solid #d8cfb5;
+        border-top: 3px solid #d8cfb5;
+        border-radius: 5px;
+        height: 20px;
+        width: 20px;
+        pointer-events: none;
+    }
+}
+
+.prev{    
+    padding: 8px 5px 8px 14px;
+    left: 10px;
+    div {
+        .rotate(315deg);
+    }
+}
+
+.next{  
+    right: 10px;  
+    padding: 8px 14px 8px 5px;
+    div {
+        .rotate(135deg);
+    }
+}
