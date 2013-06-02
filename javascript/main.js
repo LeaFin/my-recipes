@@ -96,7 +96,7 @@ function validate_data(data){
         valid = false;
     }
     empty_ing.sort();
-    if (parseInt(empty_ing[empty_ing.length-1], 10) - parseInt(empty_ing[0], 10) != empty_ing.length - 1){
+    if (parseInt(empty_ing[empty_ing.length-1], 10) - parseInt(empty_ing[0], 10) != empty_ing.length - 1 && empty_ing.length !== 0){
         $('#form-set-ing').parent().addClass('error');
         valid = false;
     }
@@ -110,7 +110,7 @@ function validate_data(data){
         valid = false;
     }
     empty_desc.sort();
-    if (parseInt(empty_desc[empty_desc.length-1], 10) - parseInt(empty_desc[0], 10) != empty_desc.length - 1){
+    if (parseInt(empty_desc[empty_desc.length-1], 10) - parseInt(empty_desc[0], 10) != empty_desc.length - 1 && empty_desc.length !== 0){
         $('#form-set-steps').parent().addClass('error');
         valid = false;
     }
@@ -191,7 +191,7 @@ function load_recipes(){
 
 function load_recipe(navEl, title){
     var main = $('#main');
-    navEl.find('ul').append('<li id="' + title + '"">' + title + '</li>');
+    navEl.find('ul').append('<li id="' + title + '">' + title + '</li>');
     main.append('<article id="' + title + '-rec"><h2>'+ title +'</h2><section id="' + title + '-rec-0"><h3>Zutaten</h3><a href="" class="next"><div></div></a><p>Für '+ JSON.parse(localStorage.getItem(title)).persons +' Personen</p><ul></ul></section></article>');
     var article = $('#'+title+'-rec');
     var ing_ul = $('#'+title+'-rec-0 ul');
