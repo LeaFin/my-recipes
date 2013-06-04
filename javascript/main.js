@@ -78,11 +78,11 @@ function validate_data(data){
                     $('#'+ v.name).addClass('error');
                     valid = false;
 
-                    if (v.name === "title" && localStorage.getItem(v.value)){
-                        $('#existing_error').css('display', 'block');
-                        valid = false;
-                    }
                 }
+            }
+            if (v.name === "title" && localStorage.getItem(v.value)){
+                $('#existing_error').css('display', 'block');
+                valid = false;
             }
         }
     });
